@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# datasets
+b_it_bot_dataset/atwork_augmented_and_real_robocup_2019
+b_it_bot_dataset/atwork_augmented_and_real_robocup_2019.zip
+
+b_it_bot_dataset/atwork_real_augmented_dataset.zip
+b_it_bot_dataset/atwork_real_augmented_dataset
+
+b_it_bot_dataset/atwork_realdata_combined/training_TEST
+b_it_bot_dataset/atwork_realdata_combined/training (copy)
+b_it_bot_dataset/atwork_realdata_combined/training
+
+b_it_bot_dataset/atwork_realdata_combined.zip
+b_it_bot_dataset/atWork_objects_surfaces_dataset.tar.gz
