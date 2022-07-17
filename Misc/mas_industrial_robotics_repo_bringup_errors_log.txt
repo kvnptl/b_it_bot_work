@@ -1,0 +1,10 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+invalid syntax (<expression>, line 1) 
+when evaluating expression 'alignment with base top + nut height + spacer height + slide height '
+when instantiating macro: rear_platform_v2 (/home/robocup/melodic/catkin_ws/src/mas_industrial_robotics/mir_common/mir_description/urdf/misc/rear_platform_v2.urdf.xacro)
+in file: /home/robocup/melodic/catkin_ws/src/mas_industrial_robotics/mir_robots/mir_hardware_config/youbot-brsu-4/urdf/robot.urdf.xacro
+RLException: Invalid <param> tag: Cannot load command parameter [robot_description]: command [['/opt/ros/melodic/lib/xacro/xacro', '--inorder', '/home/robocup/melodic/catkin_ws/src/mas_industrial_robotics/mir_robots/mir_hardware_config/youbot-brsu-4/urdf/robot.urdf.xacro']] returned with code [2]. 
+
+Param xml is <param command="$(find xacro)/xacro --inorder $(find mir_hardware_config)/$(arg robot)/urdf/robot.urdf.xacro" name="robot_description"/>
+The traceback for the exception was written to the log file

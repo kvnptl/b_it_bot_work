@@ -1,0 +1,15 @@
+libGL error: MESA-LOADER: failed to retrieve device information
+libGL error: MESA-LOADER: failed to open amdgpu (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri)
+libGL error: failed to load driver: amdgpu
+libGL error: failed to open /dev/dri/card1: No such file or directory
+libGL error: failed to load driver: radeonsi
+libGL error: MESA-LOADER: failed to retrieve device information
+libGL error: MESA-LOADER: failed to open amdgpu (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri)
+libGL error: failed to load driver: amdgpu
+libGL error: failed to open /dev/dri/card1: No such file or directory
+libGL error: failed to load driver: radeonsi
+libGL error: MESA-LOADER: failed to retrieve device information
+libGL error: MESA-LOADER: failed to open amdgpu (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri)
+libGL error: failed to load driver: amdgpu
+libGL error: failed to open /dev/dri/card1: No such file or directory
+libGL error: failed to load driver: radeonsi 
