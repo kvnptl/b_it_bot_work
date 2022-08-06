@@ -65,16 +65,23 @@ def split_dataset(input_image_folder, input_label_folder, train_percentage, test
     print('Validation set: ', len(x_valid))
     print('Test set: ', len(x_test))
 
+    # extract folder names from the paths
+    train_image_folder = os.path.basename(input_image_folder)
+    train_label_folder = os.path.basename(input_label_folder)
+
     # create a new folder for the train, validation and test data
-    output_train_folder = input_image_folder.replace('image_2', 'train/images')
-    output_valid_folder = input_image_folder.replace('image_2', 'valid/images')
-    output_test_folder = input_image_folder.replace('image_2', 'test/images')
+    output_train_folder = input_image_folder.replace(
+        train_image_folder, 'train/images')
+    output_valid_folder = input_image_folder.replace(
+        train_image_folder, 'valid/images')
+    output_test_folder = input_image_folder.replace(
+        train_image_folder, 'test/images')
     output_train_label_folder = input_label_folder.replace(
-        'label_2_bbox', 'train/labels')
+        train_label_folder, 'train/labels')
     output_valid_label_folder = input_label_folder.replace(
-        'label_2_bbox', 'valid/labels')
+        train_label_folder, 'valid/labels')
     output_test_label_folder = input_label_folder.replace(
-        'label_2_bbox', 'test/labels')
+        train_label_folder, 'test/labels')
 
     # check if the folders exist, if not create them
     if not os.path.exists(output_train_folder):
@@ -149,6 +156,8 @@ def split_dataset(input_image_folder, input_label_folder, train_percentage, test
             else:
                 print('Error: Something went wrong' + ' \u274C')
 
+    return True
+
 
 def main():
 
@@ -156,18 +165,21 @@ def main():
     # INPUT #
 
     # The path to the directory where the original dataset is stored
-    input_image_folder = '/home/kvnptl/work/b_it_bot_dataset/atwork_realdata_combined/training/image_2'
-    input_label_folder = '/home/kvnptl/work/b_it_bot_dataset/atwork_realdata_combined/training/label_2_bbox'
+    input_image_folder = 'b_it_bot_dataset/atwork_realdata_combined/training_copy_4/image'
+    input_label_folder = 'b_it_bot_dataset/atwork_realdata_combined/training_copy_4/labels_yolo'
 
     # define percentage of train, test and validation sets
-    train_percentage = 0.8
-    test_percentage = 0.1
-    validation_percentage = 0.1
+    train_percentage = 0.85
+    test_percentage = 0.05
+    validation_percentage = 0.10
 
     #########
 
-    split_dataset(input_image_folder, input_label_folder,
-                  train_percentage, test_percentage, validation_percentage)
+    out = split_dataset(input_image_folder, input_label_folder,
+                        train_percentage, test_percentage, validation_percentage)
+
+    if not out:
+        raise Exception('Error: Something went wrong')
 
 
 if __name__ == "__main__":
