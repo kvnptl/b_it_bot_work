@@ -147,5 +147,6 @@ dmypy.json
 2d_object_detection/summer_competition_22_dataset
 
 # Robocup 2023
-2d_object_detection/robocup_2023_dataset
+2d_object_detection/robocup_2023_dataset/dataset_collection_kevin_ravi
 robocup_2023_docs/TDP/videos/
+2d_object_detection/robocup_2023_dataset/robocup_2023_dataset_raw_duplicate
