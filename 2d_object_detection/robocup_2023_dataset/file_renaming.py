@@ -24,7 +24,7 @@ PARENT_DIR = "<path to parent directory>"
 
 FILE_EXTENSION = ".jpg"
 
-NEW_FILE_NAME_INITIAL = "<new file name initial>" # script will add starting index to this
+NEW_FILE_NAME_INITIAL = "<new file name initial>" # script will add starting index to this and fill with 5 zeros, example: initial00000.jpg
 NEW_FILE_NAME_STARTING_INDEX = 0 # starting index
 
 # *******************
