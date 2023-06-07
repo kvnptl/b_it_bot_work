@@ -11,39 +11,33 @@ import numpy as np
 SEED = 42
 np.random.seed(SEED)
 
-# 'axis',
-# 'bearing',
-# 'bearing_box_ax01',
-# 'bearing_box_ax16',
-# 'container_box_blue',
-# 'container_box_red',
-# 'distance_tube',
-# 'em_01',
-# 'em_02',
-# 'f20_20_B',
-# 'f20_20_G',
-# 'm20',
-# 'm20_100',
-# 'm30',
-# 'motor',
-# 'r20',
-# 's40_40_B',
-# 's40_40_G'
+# AllenKey
+# Axis2
+# Bearing2
+# Drill
+# F20_20_B
+# F20_20_G
+# Housing
+# M20
+# M20_100
+# M30
+# Motor2
+# S40_40_B
+# S40_40_G
+# Screwdriver
+# Spacer
+# Wrench
 
-class_names = ['axis', 'bearing', 'bearing_box_ax01', 'bearing_box_ax16', 'container_box_blue', 'container_box_red',
-               'distance_tube', 'em_01', 'em_02', 'f20_20_B', 'f20_20_G', 'm20', 'm20_100', 'm30', 'motor', 'r20', 's40_40_B', 's40_40_G']
+class_names = ['AllenKey', 'Axis2', 'Bearing2', 'Drill', 'F20_20_B', 'F20_20_G', 'Housing', 'M20', 'M20_100', 'M30', 'Motor2', 'S40_40_B', 'S40_40_G', 'Screwdriver', 'Spacer', 'Wrench']
 colors = np.random.uniform(0, 255, size=(len(class_names), 3))
 # class_names = ['Ambulance', 'Bus', 'Car', 'Motorcycle', 'Truck']
 # colors = np.random.uniform(0, 255, size=(len(class_names), 3))
 
 # Function to convert bounding boxes in YOLO format to xmin, ymin, xmax, ymax.
-
-
 def yolo2bbox(bboxes):
     xmin, ymin = bboxes[0]-bboxes[2]/2, bboxes[1]-bboxes[3]/2
     xmax, ymax = bboxes[0]+bboxes[2]/2, bboxes[1]+bboxes[3]/2
     return xmin, ymin, xmax, ymax
-
 
 def plot_box(image, bboxes, labels):
     # Need the image height and width to denormalize
@@ -94,7 +88,6 @@ def plot_box(image, bboxes, labels):
             font_thickness
         )
     return image
-
 
 # Function to plot images with the bounding boxes.
 def plot(image_paths, label_paths, num_samples):
@@ -161,26 +154,11 @@ def extarct_bbox_from_label(label_path):
             aa[-2] = label_folder_name
             new_label_folder_path = '/'.join(aa)
 
-            if not os.path.exists(new_label_folder_path):
-                os.makedirs(new_label_folder_path)
-
-            new_label_file_path = new_label_folder_path + file_name
-
-            # write to file
-            with open(new_label_file_path, 'w') as f:
-                for bbox, label in zip(bboxes, labels):
-                    f.write(label + ' ' + ' '.join(bbox) + '\n')
-
-
 def main():
-
-    # label_path = "/home/kvnptl/work/b_it_bot_dataset/atwork_realdata_combined/training/label_2"
-    # extarct_bbox_from_label(label_path)
-
     # Visualize a few training images.
     plot(
-        image_paths='/home/kvnptl/work/b_it_bot_work/2d_object_detection/b_it_bot_dataset/atwork_realdata_combined/training_copy_4/image/*',
-        label_paths='/home/kvnptl/work/b_it_bot_work/2d_object_detection/b_it_bot_dataset/atwork_realdata_combined/training_copy_4/labels_yolo/*',
+        image_paths='<path-to-the-image-dir>/*',
+        label_paths='<path-to-the-labels-dir>/*',
         num_samples=4,
     )
 
