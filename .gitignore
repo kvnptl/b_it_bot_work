@@ -16,6 +16,6 @@ AstA/December 2022
 AstA/Student Parliament_forms
 2d_object_detection/robocup_2023_dataset
 !2d_object_detection/robocup_2023_dataset/atwork_dataset/Labelme2YOLO
-!2d_object_detection/robocup_2023_dataset/*.py
+!2d_object_detection/robocup_2023_dataset/atwork_dataset/*.py
 
 
